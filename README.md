@@ -1,3 +1,9 @@
+The application was developed in a total of 3 people.
+https://github.com/Adamad7
+https://github.com/Xoxonin
+
+I personally dealt with ASP.NET and was responsible for Docker.
+
 **Goal:** Our project aimed to enable users to compare trends in the popularity of video games among players on the Steam platform and viewers on the Twitch platform. While data sets for each service are available individually, there is no combined comparison of these statistics.
 
 ![image](https://github.com/ultron682/docker-asp.net-react_ZestawienieDanychNaTematWplywuPlatformyTwitchNaPopularnoscGierSteam/assets/52131708/f47f7697-d991-4d6b-a091-04d58b76e7bf)
