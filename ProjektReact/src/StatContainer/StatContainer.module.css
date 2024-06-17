@@ -1,0 +1,39 @@
+.statContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: center;
+  margin-inline: auto;
+  height: 60px;
+  width: 100%;
+  margin-block: 10px;
+  /* margin-inline: 30px; */
+  max-width: 700px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+td .statContainer {
+  width: 80%;
+}
+
+.statTitle {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.statValue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  color: #ffffff;
+}

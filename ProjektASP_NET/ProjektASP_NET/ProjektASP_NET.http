@@ -1,0 +1,6 @@
+@ProjektASP_NET_HostAddress = http://localhost:5048
+
+GET {{ProjektASP_NET_HostAddress}}/
+Accept: application/json
+
+###

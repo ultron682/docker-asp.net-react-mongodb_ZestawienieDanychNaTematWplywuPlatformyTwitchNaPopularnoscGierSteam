@@ -1,0 +1,64 @@
+services:
+  react:
+    image: my_react_app:latest
+    ports:
+      - 3000:3000
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./ProjektReact/src:/app/src
+      - ./ProjektReact/public:/app/public
+    networks:
+      - app-network
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 5s
+      restart_policy:
+        condition: on-failure
+
+  aspnet:
+    image: my_aspnet_app:latest
+    ports:
+      - "27067:8080"
+    volumes:
+      - ./ProjektASP_NET/data:/app/data
+    networks:
+      - app-network
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 5s
+      restart_policy:
+        condition: on-failure
+
+  mongo:
+    image: my_mongo_database:latest
+    command: mongod --auth --bind_ip_all
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodb-data:/data/db
+      - ./ProjektMongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    environment:
+      MONGO_INITDB_DATABASE: UserDB
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: Test123!
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  mongodb-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: overlay
+
+

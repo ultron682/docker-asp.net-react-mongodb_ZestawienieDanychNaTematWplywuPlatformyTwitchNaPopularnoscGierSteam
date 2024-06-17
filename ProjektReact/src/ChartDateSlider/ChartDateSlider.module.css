@@ -1,0 +1,24 @@
+.datePicker {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+}
+.dateSlider {
+  width: 70%;
+}
+
+.dateLabel {
+  font-size: 20px;
+  margin-inline: 30px;
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border: #abe5ff 2px solid;
+}

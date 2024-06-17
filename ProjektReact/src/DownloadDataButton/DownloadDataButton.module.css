@@ -1,0 +1,29 @@
+.downloadButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.downloadButton {
+  background-color: #abe5ff;
+  color: black;
+  border: none;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20px;
+  font-weight: 500;
+  border: dashed 2px black;
+}
+
+.downloadButton:hover {
+  background-color: #62cafa;
+}

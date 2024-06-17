@@ -1,0 +1,14 @@
+services:
+  react:
+    build: ./ProjektReact
+    image: my_react_app:latest
+  aspnet:
+    build:
+      context: ./ProjektASP_NET
+      dockerfile: ./ProjektASP_NET/Dockerfile
+    image: my_aspnet_app:latest
+  mongo:
+   build: ./ProjektMongo
+   image: my_mongo_database:latest
+
+

@@ -1,0 +1,56 @@
+services:
+  react:
+    build: ./ProjektReact
+    ports:
+      - 3000:3000
+    depends_on:
+      - aspnet
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./ProjektReact/src:/app/src
+      - ./ProjektReact/public:/app/public
+    networks:
+      - app-network
+
+  aspnet:
+    image: ${DOCKER_REGISTRY-}projektaspnet
+    ports:
+      - "27067:8080"
+    build:
+      context: ./ProjektASP_NET
+      dockerfile: /ProjektASP_NET/Dockerfile
+    volumes:
+      - ./ProjektASP_NET/data:/app/data
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb-container
+    command: mongod --auth --bind_ip_all
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodb-data:/data/
+      - ./ProjektMongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      # - ./csv/import-data.sh:/docker-entrypoint-initdb.d/z-import-data.sh
+      # - ./csv:/csv/
+      # - ./init-mongo.js:/csv/init-mongo.js:ro
+    environment:
+      MONGO_INITDB_DATABASE: UserDB
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: Test123!
+    # entrypoint: ["bash", "/csv/import-data.sh"]
+    # command: bash -c "/docker-entrypoint-initdb.d/import-data.sh"
+    networks:
+      - app-network
+
+volumes:
+  mongodb-data:
+    driver: local
+networks:
+  app-network:
+    driver: bridge

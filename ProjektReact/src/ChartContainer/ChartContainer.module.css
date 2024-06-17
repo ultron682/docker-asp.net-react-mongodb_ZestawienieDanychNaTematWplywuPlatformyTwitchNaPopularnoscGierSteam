@@ -1,0 +1,17 @@
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  width: 90%;
+  max-width: 2000px;
+  margin-block: 70px;
+  margin-inline: auto;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.chartContainer h2 {
+  text-align: center;
+}
