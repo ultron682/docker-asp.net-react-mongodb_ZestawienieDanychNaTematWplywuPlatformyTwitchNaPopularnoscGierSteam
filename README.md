@@ -1,5 +1,7 @@
 The application was developed in a total of 3 people.
-https://github.com/Adamad7
+
+It is a fork of a repository belonging to: 
+https://github.com/Adamad7  
 https://github.com/Xoxonin
 
 I personally dealt with ASP.NET and was responsible for Docker.
@@ -18,15 +20,20 @@ I personally dealt with ASP.NET and was responsible for Docker.
 
 **Data Sources:**
 
-Steam:
-Dataset: Steam Games Dataset: Player count history, Price history, and data about games (Mendeley Data, CC BY 4.0)
+Steam Games Dataset: 
+https://data.mendeley.com/datasets/ycy3sy3vj2/1
+
+Player count history, Price history, and data about games.
 Contents: This dataset includes player count history, game titles, genres, and publishers. It covers 2000 games on Steam from December 14, 2017, to August 12, 2020. The data is divided into multiple .csv files named by Steam game IDs. Each file contains date-specific player count data.
 
-Twitch:
+Twitch Games Dataset:
+https://www.kaggle.com/datasets/rankirsh/evolution-of-top-games-on-twitch
 
-Top games on Twitch 2016 - 2023 (kaggle.com, CC0)
 Contents: This dataset provides historical data on the top 200 games each month on Twitch from January 2016 to October 2023. Each record includes the year, month, game ranking, game name, and average number of viewers per month.
-Application: By combining these two datasets, our application allows users to compare the popularity of games and their genres among players and viewers through various types of charts and offers filtering options.
+
+
+
+**Application:** By combining these two datasets, our application allows users to compare the popularity of games and their genres among players and viewers through various types of charts and offers filtering options. The application includes user authentication by JWT.
 
 
 
